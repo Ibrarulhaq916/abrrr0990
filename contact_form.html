@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact us</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+  <div class="container">
+    <div class="item">
+      <div class="contact">
+        <div class="first-text">let's get in touch</div>
+        <img src="img-1.jpg" class="image" alt="">
+        <br>  
+
+        <span class="secnd-text">connect with us:</span>
+        <ul class="social-media">
+          <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+          <li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+          <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+          <li><a href="#"><i class='bx bxl-instagram'></i></i></a></li>
+
+        </ul>
+      </div>
+      <div class="submit-form">
+        <h4 class="third-text text">contact us</h4>
+        <form action="">
+          <div class="input-box">
+            <input type="text" class="input">
+            <label for="">Name</label>
+            <label for="" id="nameerror"></label>
+
+          </div>
+          <div class="input-box">
+            <input type="text" class="input" >
+            <label for="">Email</label>
+            <label for="" id="emailerror"></label>
+
+          </div>
+          
+          <div class="input-box">
+           <textarea name="" class="input"   id="  message" cols="30" rows="10"></textarea>
+            <label for="">message</label>
+          </div>
+
+         
+                <button class="btn" type="submit" onclick="validate()" id="register">submit</button>
+      
+
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+  function validate(){
+    var name = document.getElementById("nm").value;
+    var email = document.getElementById("em").value;
+    // var textarerea = document.getElementById("mess").value;
+
+    var namepattern = /^[A-Za-z]{3,20}$/;
+    var emailpattern = /^[a-zA-Z_.]{3,}[0-9]{0,9}@[a-zA-z]{3,}[.]{1}[a-zA-Z]{2,6}$/;
+
+    if (namepattern.test(name)) {
+        document.getElementById("nameerror").innerHTML = "";
+    } else {
+        document.getElementById("nameerror").innerHTML = "Name is invalid";
+        document.getElementById("nameerror").style.color = "red";
+    }
+    if (emailpattern.test(email)) {
+        document.getElementById("emailerror").innerHTML = "";
+    } else {
+        document.getElementById("emailerror").innerHTML = "Email is invalid";
+        document.getElementById("emailerror").style.color = "red";
+
+    }
+}
+</script>
+
+</html>
